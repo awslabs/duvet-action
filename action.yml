@@ -26,10 +26,6 @@ inputs:
   cdn:
     description: 'Prefix the S3 URL with a CDN'
     required: false
-  s2n-quic-dir:
-    description: 'Path to the directory where s2n-quic is cloned'
-    default: ${{ github.workspace }}
-    required: false
 runs:
   using: "composite"
   steps:
