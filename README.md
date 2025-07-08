@@ -51,14 +51,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/checkout@v3
+      - uses: awslabs/duvet-action@v1
         with:
-          repository: aws/s2n-quic
-          path: ./s2n-quic
-          submodules: true
-      - uses: ./s2n-quic/.github/actions/duvet
-        with:
-          s2n-quic-dir: ./s2n-quic
           report-script: compliance/generate_report.sh
           role-to-assume: arn:aws:iam::123456789:role/GitHubOIDCRole
           role-session-name: GithubActionSession
